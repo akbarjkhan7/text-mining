@@ -99,8 +99,3 @@ How the code represents text for each model
 Evaluation & metrics
 - The notebook reports accuracy, macro F1, macro precision, macro recall, and classification reports and confusion matrices for each model.
 - The printed evaluation summary table shows that CNN and LSTM outperform the classical models on accuracy and macro-F1 in the current setup (see numbers above).
-
-Contact / author
-- Repo owner: akbarjkhan7 — thank you for sharing the notebook & dataset. If you want, I can prepare the code refactor (scripts + CLI + requirements) and update the README in the repo directly.
-
-If you want me to update README in the repo now, tell me which of the next steps above you want me to take (for example: add requirements.txt and a runnable predict.py; or refactor notebook into scripts), and I will produce the files and suggested commits.
