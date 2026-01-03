@@ -1,4 +1,3 @@
-# Text-Mining-And-Language-Analytics
 # Text Mining — Product Review Rating Prediction
 
 Repository overview
@@ -100,34 +99,6 @@ How the code represents text for each model
 Evaluation & metrics
 - The notebook reports accuracy, macro F1, macro precision, macro recall, and classification reports and confusion matrices for each model.
 - The printed evaluation summary table shows that CNN and LSTM outperform the classical models on accuracy and macro-F1 in the current setup (see numbers above).
-
-Reproducibility & tips
-- Ensure deterministic behavior where needed: set random seeds for numpy, python random and TensorFlow (not fully deterministically reproducible across hardware).
-- Save pip package versions:
-```bash
-pip freeze > requirements.txt
-```
-- GPU strongly recommended for training CNN/LSTM (training times in the notebook suggest long CPU training).
-
-Known issues and suggested improvements
-- Class imbalance: label distribution is heavily skewed toward 5. This inflates accuracy while macro F1 remains low for weaker models. Consider:
-  - class weighting or focal loss for NN models,
-  - upsampling minority classes or downsampling majority class,
-  - stratified cross-validation beyond simple CV for better hyperparameter selection.
-- Preprocessing:
-  - The notebook uses whitespace split rather than robust tokenization; consider NLTK/Spacy tokenizer and lemmatization.
-  - Contractions (e.g., "I'll") and punctuation handling could be improved.
-- Label casting: dataset contains blank/NaN `Score` entries; these are dropped in the notebook. Verify you want to drop them or impute if appropriate.
-- Metrics: macro F1 is the appropriate metric given imbalance; consider per-class reports and confusion matrices (already in notebook).
-- Model checkpointing: use ModelCheckpoint to persist the best weights during training.
-- Save TF TextVectorization vocabulary to ensure inference uses the same tokenizer/vocab.
-
-Repository next steps I can do for you (pick any)
-- Convert the notebook into a small, runnable Python package (scripts in `src/`) with CLI options for training and inference.
-- Create a requirements.txt / environment.yml with pinned versions.
-- Replace the absolute dataset path with a configurable relative path and add a short script `predict.py` that exposes `predict_product_rating()` for CLI usage.
-- Add a LICENSE (MIT / Apache-2.0) and CONTRIBUTING.md.
-- Add a small README section with sample outputs and the final evaluation table (I already included the evaluation summary above; I can format it as a markdown table).
 
 Contact / author
 - Repo owner: akbarjkhan7 — thank you for sharing the notebook & dataset. If you want, I can prepare the code refactor (scripts + CLI + requirements) and update the README in the repo directly.
