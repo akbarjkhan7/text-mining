@@ -1,6 +1,7 @@
 # Text Mining — Product Review Rating Prediction
 
 Repository overview
+
 This repository contains a Jupyter notebook implementation (zvdr73.ipynb), the dataset (dataset.csv) and the assignment specification (Problem Question.pdf) for a coursework-style project: predicting an Amazon product review rating (1–5) from the review text. The notebook implements classical and deep models, evaluates them, and saves trained models for later inference.
 
 Status (what's in the repo)
